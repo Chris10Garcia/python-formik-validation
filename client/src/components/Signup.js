@@ -21,12 +21,12 @@ export const SignupForm = () => {
     email: yup.string().email("Invalid email").required("Must enter email"),
     name: yup.string().required("Must enter a name").max(15),
     age: yup
-      .number()
-      .positive()
-      .integer()
-      .required("Must enter age")
-      .typeError("Please enter an Integer")
-      .max(125),
+            .number()
+            .positive()
+            .integer()
+            .required("Must enter age")
+            .typeError("Please enter an Integer")
+            .max(125),
   });
 
   const formik = useFormik({
@@ -44,7 +44,7 @@ export const SignupForm = () => {
         },
         body: JSON.stringify(values, null, 2),
       }).then((res) => {
-        if (res.status == 200) {
+        if (res.status === 200) {
           setRefreshPage(!refreshPage);
         }
       });
